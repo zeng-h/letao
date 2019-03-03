@@ -1,0 +1,127 @@
+/* 定义一些公共的变量 */
+@main-color: #006699;
+
+/* 样式初始化（不需要写那么多，因为mui已经写了一些了，只需要加一些就好了） */
+
+/* 去掉默认的间距 */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 26.66667vw;
+}
+
+body {
+  /* mui默认是17px */
+  font-size: .14rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 0;
+}
+
+/* 去除图片与块级元素底部的3像素的距离 */
+img {
+  /* 解决图片和块级元素3px间隙问题 */
+  vertical-align: middle;
+}
+
+/* 头部底部公共样式 */
+#header {
+  background-color: @main-color;
+  display: flex;
+  color: #fff;
+  height: .45rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+
+  .left {
+    a {
+      color: #fff;
+    }
+  }
+
+  .left,
+  .right {
+    width: .45rem;
+    height: .45rem;
+    text-align: center;
+    line-height: .45rem;
+  }
+
+  .center {
+    flex: 1;
+    text-align: center;
+    line-height: .45rem;
+
+    h4 {
+      line-height: .45rem;
+      font-weight: normal;
+    }
+
+    input {
+      height: .35rem;
+      font-size: .14rem;
+    }
+  }
+
+}
+
+/* 主体区域 */
+#main {
+  flex: 1;
+  height: 100vh;
+  padding: .45rem 0;
+
+}
+
+/* 底部区域 */
+#footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: .45rem;
+  background-color: @main-color;
+  width: 100%;
+  z-index: 999;
+
+  >div {
+    height: 100%;
+
+    >div {
+      height: 100%;
+
+      a {
+        height: 100%;
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        span {
+          line-height: 1;
+        }
+
+        &.active {
+          color: orange;
+        }
+      }
+
+    }
+
+
+  }
+}
