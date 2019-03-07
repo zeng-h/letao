@@ -124,34 +124,36 @@ img {
   line-height: 1;
 }
 /* 主体区域 */
-#main {
-  background-color: #ccc;
-  display: flex;
+#main .detail ul > li {
+  width: 100%;
+  padding-left: .1rem;
 }
-#main .left {
-  width: .8rem;
-}
-#main .left ul {
-  /* li的横线用伪元素做的，left有些偏移 所以可以修改left让其不偏移 */
-}
-#main .left ul li {
-  width: .8rem;
-}
-#main .left ul li.active {
-  background-color: #ccc;
-}
-#main .left ul .mui-table-view-cell:after {
+#main .detail ul > li:after {
   left: 0;
 }
-#main .right {
-  padding: .1rem;
-  flex: 1;
+#main .detail ul > li .price {
+  color: red;
 }
-#main .right a {
-  display: block;
-  background-color: #fff;
-  text-align: center;
+#main .detail ul .size {
+  line-height: .34rem;
 }
-#main .right a img {
+#main .detail ul .size .sizeNum button {
+  margin-bottom: .04rem;
+}
+/* 底部区域 */
+#footer {
+  background-color: #ccc;
+}
+#footer .fa-shopping-cart {
+  font-size: .2rem;
+  color: #666;
+}
+#footer .mui-col-xs-5 {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 .05rem;
+}
+#footer .mui-col-xs-5 button {
   width: 100%;
 }

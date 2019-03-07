@@ -2,14 +2,41 @@
 
 /* 主体区域 */
 #main {
-  .mui-scroll-wrapper {
-    padding: .45rem 0;
-    position: relative;
-    height: 100vh;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    overflow: hidden;
+  background-color: #ccc;
+  display: flex;
+
+  .left {
+    width: .8rem;
+
+    ul {
+      li {
+        width: .8rem;
+
+        &.active {
+          background-color: #ccc;
+        }
+      }
+
+      /* li的横线用伪元素做的，left有些偏移 所以可以修改left让其不偏移 */
+      .mui-table-view-cell:after {
+        left: 0;
+      }
+    }
+  }
+
+
+  .right {
+    padding: .1rem;
+    flex: 1;
+
+    a {
+      display: block;
+      background-color: #fff;
+      text-align: center;
+
+      img {
+        width: 100%;
+      }
+    }
   }
 }

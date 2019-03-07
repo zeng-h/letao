@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>自己写的乐淘移动端购物车页面</title>
+  <!-- 引入Mui的css文件 -->
+  <link rel="stylesheet" href="./lib/mui/css/mui.css">
+  <!-- 引入fontwesome字体图标库的css文件 -->
+  <link rel="stylesheet" href="./lib/fontAwesome/css/font-awesome.css">
+  <!-- 引入自己的css文件 -->
+  <link rel="stylesheet" href="./less/cart.css">
+</head>
+
+<body>
+  <!-- 头部区域 -->
+  <header id="header">
+    <div class="left">
+      <a href="javascript:history.back();" class="fa fa-arrow-left"></a>
+    </div>
+    <div class="center">
+      <h4>购物车</h4>
+    </div>
+    <div class="right">
+      <a class="fa fa-refresh" href="#"></a>
+    </div>
+  </header>
+  <!-- 主体区域 -->
+  <main id="main">
+    <div id="pullrefresh" class="mui-content mui-scroll-wrapper">
+      <div class="mui-scroll">
+        <ul class="mui-table-view">
+          <li class="mui-table-view-cell">
+            <a class="mui-navigate-right content">
+              <div class="left">
+                <img src="./images/brand1.png" alt="">
+                <div class="mui-checkbox">
+                  <input name="checkbox" value="Item 2" type="checkbox" checked="">
+                </div>
+              </div>
+              <div class="right">
+                <p class="proName">李宁闪击篮球鞋驭帅10镭射队尚4男韦德之道空袭中高帮队尚3.5球鞋</p>
+                <p class="price"><strong class="newPrice">￥998.88</strong><del>￥898.88</del></p>
+                <p class="size-num"><span>鞋码：50</span> <span>X1双</span></p>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </main>
+  <!-- 订单区域 -->
+  <section id="order">
+    <span>订单总额：￥0.00</span>
+    <button type="button" class="mui-btn mui-btn-danger">生成订单</button>
+  </section>
+  <!-- 底部区域 -->
+  <footer id="footer">
+    <div class="mui-row">
+      <div class="mui-col-xs-3">
+        <a href="index.html"><i class="fa fa-home"></i><span>首页</span></a>
+      </div>
+      <div class="mui-col-xs-3">
+        <a href="category.html"><i class="fa fa-bars"></i><span>分类</span></a>
+      </div>
+      <div class="mui-col-xs-3 ">
+        <a href="#" class="active"><i class="fa fa-shopping-cart"></i><span>购物车</span></a>
+      </div>
+      <div class="mui-col-xs-3">
+        <a href="#"><i class="fa fa-user"></i><span>个人中心</span></a>
+      </div>
+
+    </div>
+  </footer>
+
+
+  <!-- 准备模板 -->
+  <script id="cartTpl" type="text/html">
+    {{each data value i}}
+    <li class="mui-table-view-cell">
+      <a class="mui-navigate-right content">
+        <div class="left">
+          {{each value.pic value i}}
+          {{if i==0}}
+          <img src="{{value.picAddr}}" alt="">
+          {{/if}}
+          {{/each}}
+          <div class="mui-checkbox">
+            <input name="checkbox" value="Item 2" type="checkbox" checked="">
+          </div>
+        </div>
+        <div class="right">
+          <p class="proName">{{value.proName}}</p>
+          <p class="price"><strong class="newPrice">￥{{value.price}}</strong><del>￥{{value.oldPrice}}</del></p>
+          <p class="size-num"><span>鞋码：{{value.size}}</span> <span>X{{value.num}}双</span></p>
+        </div>
+      </a>
+    </li>
+    {{/each}}
+
+  </script>
+  <!-- 引入mui的js文件 -->
+  <script src="./lib/mui/js/mui.js"></script>
+  <!-- 引入zepto 获取元素 发送请求 -->
+  <script src="./lib/zepto//zepto.min.js"></script>
+  <!-- 请求使用到模板，引入模板引擎 -->
+  <script src="./lib/artTemplate/template-web.js"></script>
+  <!-- 引入自己的js -->
+  <script src="./js/cart.js"></script>
+</body>
+
+</html>

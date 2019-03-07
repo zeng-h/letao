@@ -1,0 +1,60 @@
+@import 'base.less';
+
+/* 商品列表主体区域样式 */
+#main {
+  .title {
+    a {
+      color: #666;
+      font-size: .14rem;
+
+      &.active {
+        color: red;
+      }
+    }
+  }
+
+  .content {
+    .product-detail {
+      box-shadow: 0px 1px 0 #ccc;
+
+      &:nth-child(odd) {
+        box-shadow: 1px 1px 0 #ccc;
+      }
+
+      // 商品盒子
+      .product {
+        padding: .1rem .05rem;
+        text-align: center;
+
+        a {
+          display: block;
+          color: #666;
+
+          img {
+            width: 100%;
+          }
+
+          p {
+            overflow: hidden;
+
+            text-overflow: ellipsis;
+
+            display: -webkit-box;
+
+            -webkit-box-orient: vertical;
+
+            -webkit-line-clamp: 2;
+          }
+
+        }
+      }
+
+
+
+
+
+
+
+    }
+  }
+}

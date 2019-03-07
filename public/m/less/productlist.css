@@ -123,35 +123,35 @@ img {
 #footer > div > div a span {
   line-height: 1;
 }
-/* 主体区域 */
-#main {
-  background-color: #ccc;
-  display: flex;
+/* 商品列表主体区域样式 */
+#main .title a {
+  color: #666;
+  font-size: .14rem;
 }
-#main .left {
-  width: .8rem;
+#main .title a.active {
+  color: red;
 }
-#main .left ul {
-  /* li的横线用伪元素做的，left有些偏移 所以可以修改left让其不偏移 */
+#main .content .product-detail {
+  box-shadow: 0px 1px 0 #ccc;
 }
-#main .left ul li {
-  width: .8rem;
+#main .content .product-detail:nth-child(odd) {
+  box-shadow: 1px 1px 0 #ccc;
 }
-#main .left ul li.active {
-  background-color: #ccc;
-}
-#main .left ul .mui-table-view-cell:after {
-  left: 0;
-}
-#main .right {
-  padding: .1rem;
-  flex: 1;
-}
-#main .right a {
-  display: block;
-  background-color: #fff;
+#main .content .product-detail .product {
+  padding: .1rem .05rem;
   text-align: center;
 }
-#main .right a img {
+#main .content .product-detail .product a {
+  display: block;
+  color: #666;
+}
+#main .content .product-detail .product a img {
   width: 100%;
+}
+#main .content .product-detail .product a p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
 }

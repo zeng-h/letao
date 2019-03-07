@@ -1,0 +1,80 @@
+@import 'base.less';
+
+/* 主体区域的样式 */
+#main {
+  padding-bottom: .9rem;
+
+  .mui-table-view-cell {
+    .content {
+      display: flex;
+      color: #666;
+
+      .left {
+        width: 1rem;
+        text-align: center;
+        position: relative;
+
+        img {
+          width: 100%;
+        }
+
+        .mui-checkbox {
+          // 取消复选框父元素的定位，让其参照left这个大盒子
+          position: static;
+
+        }
+
+        input {
+          width: .2rem;
+          height: .2rem;
+          top: auto;
+          bottom: .01rem;
+          left: 35%;
+
+          &::before {
+            color: skyblue;
+          }
+        }
+      }
+
+      .right {
+        flex: 1;
+
+        .price {
+          padding: .06rem 0;
+
+          .newPrice {
+            color: red;
+          }
+        }
+
+        .size-num {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+      }
+
+      &:not(.mui-btn) {
+        white-space: normal;
+      }
+    }
+  }
+
+}
+
+/* 订单区域 */
+#order {
+  position: fixed;
+  height: .4rem;
+  bottom: .4rem;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: red;
+  box-shadow: .01rem 0 .01rem #666;
+  padding: 0 .1rem;
+  background-color: #fff;
+}

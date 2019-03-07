@@ -1,0 +1,64 @@
+@import 'base.less';
+
+/* 主体区域 */
+#main {
+  .detail {
+    // .slide {
+    //   a {
+    //     height: 2.2rem;
+
+    //     img {
+    //       height: 100%;
+    //     }
+    //   }
+    // }
+
+    ul {
+      >li {
+        width: 100%;
+        padding-left: .1rem;
+
+        &:after {
+          left: 0;
+        }
+
+        .price {
+          color: red;
+        }
+      }
+
+      .size {
+        line-height: .34rem;
+
+        .sizeNum {
+          button {
+            margin-bottom: .04rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* 底部区域 */
+#footer {
+  background-color: #ccc;
+
+  .fa-shopping-cart {
+    font-size: .2rem;
+    color: #666;
+  }
+
+  .mui-col-xs-5 {
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 .05rem;
+
+    button {
+      width: 100%;
+    }
+
+  }
+}

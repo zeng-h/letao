@@ -123,35 +123,64 @@ img {
 #footer > div > div a span {
   line-height: 1;
 }
-/* 主体区域 */
+/* 主体区域的样式 */
 #main {
-  background-color: #ccc;
+  padding-bottom: .9rem;
+}
+#main .mui-table-view-cell .content {
   display: flex;
+  color: #666;
 }
-#main .left {
-  width: .8rem;
+#main .mui-table-view-cell .content .left {
+  width: 1rem;
+  text-align: center;
+  position: relative;
 }
-#main .left ul {
-  /* li的横线用伪元素做的，left有些偏移 所以可以修改left让其不偏移 */
+#main .mui-table-view-cell .content .left img {
+  width: 100%;
 }
-#main .left ul li {
-  width: .8rem;
+#main .mui-table-view-cell .content .left .mui-checkbox {
+  position: static;
 }
-#main .left ul li.active {
-  background-color: #ccc;
+#main .mui-table-view-cell .content .left input {
+  width: .2rem;
+  height: .2rem;
+  top: auto;
+  bottom: .01rem;
+  left: 35%;
 }
-#main .left ul .mui-table-view-cell:after {
-  left: 0;
+#main .mui-table-view-cell .content .left input::before {
+  color: skyblue;
 }
-#main .right {
-  padding: .1rem;
+#main .mui-table-view-cell .content .right {
   flex: 1;
 }
-#main .right a {
-  display: block;
-  background-color: #fff;
-  text-align: center;
+#main .mui-table-view-cell .content .right .price {
+  padding: .06rem 0;
 }
-#main .right a img {
+#main .mui-table-view-cell .content .right .price .newPrice {
+  color: red;
+}
+#main .mui-table-view-cell .content .right .size-num {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#main .mui-table-view-cell .content:not(.mui-btn) {
+  white-space: normal;
+}
+/* 订单区域 */
+#order {
+  position: fixed;
+  height: .4rem;
+  bottom: .4rem;
+  left: 0;
   width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: red;
+  box-shadow: .01rem 0 .01rem #666;
+  padding: 0 .1rem;
+  background-color: #fff;
 }

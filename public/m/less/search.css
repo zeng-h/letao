@@ -123,35 +123,13 @@ img {
 #footer > div > div a span {
   line-height: 1;
 }
-/* 主体区域 */
+/* 搜索页面主体的样式 */
 #main {
-  background-color: #ccc;
-  display: flex;
+  /* 搜索列表 */
 }
-#main .left {
-  width: .8rem;
+#main .search-history .search-input .right a {
+  color: #666;
 }
-#main .left ul {
-  /* li的横线用伪元素做的，left有些偏移 所以可以修改left让其不偏移 */
-}
-#main .left ul li {
-  width: .8rem;
-}
-#main .left ul li.active {
-  background-color: #ccc;
-}
-#main .left ul .mui-table-view-cell:after {
+#main .history .mui-table-view-cell:after {
   left: 0;
-}
-#main .right {
-  padding: .1rem;
-  flex: 1;
-}
-#main .right a {
-  display: block;
-  background-color: #fff;
-  text-align: center;
-}
-#main .right a img {
-  width: 100%;
 }

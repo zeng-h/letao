@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>自己写的乐淘移动端分类页</title>
+  <title>自己写的乐淘移动端分类页面</title>
   <!-- 引入Mui的css文件 -->
   <link rel="stylesheet" href="./lib/mui/css/mui.css">
   <!-- 引入fontwesome字体图标库的css文件 -->
@@ -21,33 +21,57 @@
       <a href="javascript:history.back();" class="fa fa-arrow-left"></a>
     </div>
     <div class="center">
-      <input type="text" placeholder="请输入要搜索的内容">
+      <form action="">
+        <input type="text" placeholder="请输入要搜索的内容">
+      </form>
     </div>
     <div class="right">
-      <i class="fa fa-search"></i>
+      <a class="fa fa-search" href="./search.html"></a>
     </div>
   </header>
   <!-- 主体区域 -->
   <main id="main">
-    <div class="mui-scroll-wrapper">
-      <div class="mui-scroll">
-        <div class="mui-row">
-          <div class="mui-col-xs-3 left">
-            <ul>
-              <li><a href="#">运动馆</a></li>
-              <li><a href="#">女士馆</a></li>
-              <li><a href="#">男士馆</a></li>
-              <li><a href="#">帆布馆</a></li>
-              <li><a href="#">户外馆</a></li>
-            </ul>
-          </div>
-          <div class="mui-col-xs-9 right">
+
+    <div class="left">
+      <div class="mui-scroll-wrapper">
+        <div class="mui-scroll">
+          <ul class="mui-table-view">
+            <li class="mui-table-view-cell active">运动馆</li>
+            <li class="mui-table-view-cell">女士馆</li>
+            <li class="mui-table-view-cell">男士馆</li>
+            <li class="mui-table-view-cell">户外馆</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="right">
+      <div class="mui-scroll-wrapper">
+        <div class="mui-scroll">
+          <div class="mui-row right-brand">
+            <div class="mui-col-xs-4"><a href="#"><img src="/mobile/images/brand1.png" alt="">
+                <p>耐克</p>
+              </a></div>
+            <div class="mui-col-xs-4"><a href="#"><img src="/mobile/images/brand2.png" alt="">
+                <p>耐克</p>
+              </a></div>
+            <div class="mui-col-xs-4"><a href="#"><img src="/mobile/images/brand3.png" alt="">
+                <p>耐克</p>
+              </a></div>
+            <div class="mui-col-xs-4"><a href="#"><img src="/mobile/images/brand4.png" alt="">
+                <p>耐克</p>
+              </a></div>
+            <div class="mui-col-xs-4"><a href="#"><img src="/mobile/images/brand5.png" alt="">
+                <p>耐克</p>
+              </a></div>
           </div>
         </div>
 
-
       </div>
     </div>
+
+
+
 
   </main>
 
@@ -56,10 +80,10 @@
   <footer id="footer">
     <div class="mui-row">
       <div class="mui-col-xs-3">
-        <a href="index.html"><i class="fa fa-home active"></i><span>首页</span></a>
+        <a href="index.html"><i class="fa fa-home"></i><span>首页</span></a>
       </div>
       <div class="mui-col-xs-3">
-        <a href="category.html"><i class="fa fa-bars"></i><span>分类</span></a>
+        <a href="category.html" class="active"><i class="fa fa-bars"></i><span>分类</span></a>
       </div>
       <div class="mui-col-xs-3">
         <a href="#"><i class="fa fa-shopping-cart"></i><span>购物车</span></a>
@@ -70,6 +94,23 @@
 
     </div>
   </footer>
+
+  <!-- 准备左侧列表模板 -->
+  <script id="categoryLeftTpl" type="text/html">
+    {{each rows value i}}
+    
+    <li class="mui-table-view-cell {{i==0?'active':''}}" data-id='{{value.id}}'>{{value.categoryName}}</li>
+    {{/each}}
+  </script>
+
+  <!-- 准备右侧列表模板 -->
+  <script id="categoryRightTpl" type="text/html">
+    {{each rows value i}}
+    <div class="mui-col-xs-4"><a href="#"><img src="{{value.brandLogo}}" alt="">
+      <p>{{value.brandName}}</p>
+    </a></div>
+    {{/each}}
+  </script>
 
 
   <!-- 引入mui的js文件 -->
