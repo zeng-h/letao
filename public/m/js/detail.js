@@ -53,7 +53,6 @@ $(function () {
         // 调用模板
         var html = template('detailTpl', data);
         $('#main').html(html);
-
         // 注意：要在页面渲染完成后记得初始化
         // 1. 初始化轮播图
         initSlide();
@@ -105,7 +104,20 @@ $(function () {
             location = 'login.html?returnURL=' + location.href;
           } else {
             // 代表已经登录成功了，跳转到购物车页面
-            location = 'cart.html';
+            mui.confirm('加入购物车是否进入购物车查看？', '温馨提示', ['是', '否'], function (e) {
+              // console.log(e);
+              if (e.index == 1) {
+                // 点击了否就提示继续购买
+                mui.toast('剁手党请继续剁手!', {
+                  duration: 'long',
+                  type: 'div'
+                });
+              } else {
+                // 点击了是就取到购物车查看
+                location = 'cart.html';
+              }
+            }, 'div')
+
           }
         }
 

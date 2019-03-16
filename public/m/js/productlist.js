@@ -1,14 +1,18 @@
 // 搜索列表页面的逻辑代码
 // 定义一个全局变量 存储搜索的内容
 var proName = '';
-var page = 1;
+
 
 $(function () {
-  // 请求产品
+  // 页面刚加载调用当前查询商品的函数
   queryProduct();
+  // 调用当前商品搜索页面的搜索功能
   searchProduct();
+  // 调用排序功能
   productSort();
+  // 调用下拉刷新和上拉记载的功能函数
   pullRefresh();
+  // 调用跳转到商品详情的函数
   gotoDetail();
 
   // 1. 查询产品的函数
@@ -150,6 +154,7 @@ $(function () {
         }
       }
     });
+
     /**
      * 下拉刷新具体业务实现
      */
@@ -157,9 +162,12 @@ $(function () {
       setTimeout(function () {
         queryProduct();
         mui('#pullrefresh').pullRefresh().endPulldownToRefresh(); //refresh completed
+        mui('#pullrefresh').pullRefresh().refresh(true);
+        page = 1;
       }, 1000)
 
     }
+    var page = 1;
     /**
      * 上拉加载具体业务实现
      */
@@ -186,8 +194,6 @@ $(function () {
           }
         });
       }, 1000)
-
-
     }
   }
 

@@ -5,11 +5,41 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <title>自写的员工登录页面</title>
+  <!-- 引入bootstrap的css -->
+  <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.css">
+  <!-- 引入字体库 -->
+  <link rel="stylesheet" href="lib/font-awesome/css/font-awesome.css">
+  <!-- 引入自己写的登录css -->
+  <link rel="stylesheet" href="./less/login.css">
 </head>
 
 <body>
-  denglu
+  <main id="main">
+    <img src="./images/66.jpeg" alt="">
+    <div class="input-group">
+      <span class="input-group-addon" id="sizing-addon2">用户名</span>
+      <input type="text" class="form-control username" placeholder="请输入用户名" aria-describedby="sizing-addon2">
+    </div>
+    <div class="input-group">
+      <span class="input-group-addon" id="sizing-addon2">密&nbsp;&nbsp;&nbsp;&nbsp;码</span>
+      <input type="text" class="form-control password" placeholder="请输入密码" aria-describedby="sizing-addon2">
+    </div>
+    <div class="input-group">
+      <button type="button" class="btn btn-primary btn-block login-btn">登录</button>
+    </div>
+  </main>
+
+
+
+  <!-- 由于bootstrap依赖于jquery，所以要先引入jquery -->
+  <script src="./lib/jquery/jquery.min.js"></script>
+  <!-- 引入bootstrap的js -->
+  <script src="./lib/bootstrap/js/bootstrap.min.js"></script>
+  <!-- 引入模板引擎 -->
+  <script src="lib/artTemplate/template-web.js"></script>
+  <!-- 引入登录的js -->
+  <script src="./js/login.js"></script>
 </body>
 
 </html>

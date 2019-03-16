@@ -5,13 +5,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>自己写的乐淘移动端登录页面</title>
+  <title>自己写的乐淘移动端购物车页面</title>
   <!-- 引入Mui的css文件 -->
   <link rel="stylesheet" href="./lib/mui/css/mui.css">
   <!-- 引入fontwesome字体图标库的css文件 -->
   <link rel="stylesheet" href="./lib/fontAwesome/css/font-awesome.css">
   <!-- 引入自己的css文件 -->
-  <link rel="stylesheet" href="./less/login.css">
+  <link rel="stylesheet" href="./less/user.css">
 </head>
 
 <body>
@@ -21,47 +21,57 @@
       <a href="javascript:history.back();" class="fa fa-arrow-left"></a>
     </div>
     <div class="center">
-      <h4>登录中心</h4>
+      <h4>个人中心</h4>
     </div>
     <div class="right">
-      <a class="fa fa-home" href="index.html"></a>
+
     </div>
   </header>
   <!-- 主体区域 -->
   <main id="main">
-    <form class="mui-input-group">
-      <div class="mui-input-row">
-        <label>用户名</label>
-        <input type="text" class="mui-input-clear username" placeholder="请输入用户名">
-      </div>
-      <div class="mui-input-row">
-        <label>密码</label>
-        <input type="password" class="mui-input-password password" placeholder="请输入密码">
-      </div>
-      <div class="mui-button-row">
-        <button type="button" class="mui-btn mui-btn-primary btn-login">登录</button>
-        <a href="register.html" type="button" class="mui-btn mui-btn-danger register-btn">免费注册</a>
-      </div>
-    </form>
+    <ul class="mui-table-view">
+      <li class="mui-table-view-cell mui-media">
+        <a href="javascript:;">
+          <img class="mui-media-object mui-pull-left" src="./images/user.jpg">
+          <div class="mui-media-body">
+            <p> 用户名：<span class="username">itcast</span></p>
+            <p>绑定手机：<span class="phonenum">199999999</span></p>
+          </div>
+        </a>
+      </li>
+      <li class="mui-table-view-cell">
+        <a class="mui-navigate-right">账号与安全</a>
+      </li>
+      <li class="mui-table-view-cell">
+        <a class="mui-navigate-right">我的购物车</a>
+      </li>
+      <li class="mui-table-view-cell">
+        <a class="mui-navigate-right">收货地址管理</a>
+      </li>
+      <li class="mui-table-view-cell">
+        <button class="logout">退出登录</button>
+      </li>
+    </ul>
   </main>
   <!-- 底部区域 -->
   <footer id="footer">
     <div class="mui-row">
       <div class="mui-col-xs-3">
-        <a href="index.html" class="active"><i class="fa fa-home"></i><span>首页</span></a>
+        <a href="index.html"><i class="fa fa-home"></i><span>首页</span></a>
       </div>
       <div class="mui-col-xs-3">
         <a href="category.html"><i class="fa fa-bars"></i><span>分类</span></a>
       </div>
-      <div class="mui-col-xs-3">
+      <div class="mui-col-xs-3 ">
         <a href="cart.html"><i class="fa fa-shopping-cart"></i><span>购物车</span></a>
       </div>
       <div class="mui-col-xs-3">
-        <a href="user.html"><i class="fa fa-user"></i><span>个人中心</span></a>
+        <a href="#" class="active"><i class="fa fa-user"></i><span>个人中心</span></a>
       </div>
 
     </div>
   </footer>
+
 
 
 
@@ -72,7 +82,7 @@
   <!-- 请求使用到模板，引入模板引擎 -->
   <script src="./lib/artTemplate/template-web.js"></script>
   <!-- 引入自己的js -->
-  <script src="./js/login.js"></script>
+  <script src="./js/user.js"></script>
 </body>
 
 </html>

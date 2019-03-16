@@ -184,3 +184,15 @@ img {
   padding: 0 .1rem;
   background-color: #fff;
 }
+.mui-popup-inner {
+  padding: 0.15rem 0;
+}
+.mui-popup-inner .mui-table-view-cell {
+  padding: 0.1rem;
+}
+.mui-popup-inner .mui-table-view-cell:first-child {
+  line-height: .4rem;
+}
+.mui-popup-inner .mui-table-view-cell:first-child button {
+  margin-top: .05rem;
+}

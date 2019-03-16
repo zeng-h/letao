@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>自写的后台二级分类页面</title>
+  <!-- 引入bootstrap的css -->
+  <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.css">
+  <!-- 引入字体库 -->
+  <link rel="stylesheet" href="lib/font-awesome/css/font-awesome.css">
+  <!-- 引入自己写的登录css -->
+  <link rel="stylesheet" href="./less/index.css">
+</head>
+
+<body>
+  <main id="main">
+    <section class="left">
+      <div class="logo">
+        <img src="./images/66.jpeg" alt="">
+        <p>千玺弟弟</p>
+      </div>
+      <div class="list-group">
+        <a href="index.html" class="list-group-item">用户管理</a>
+        <a href="#" class="list-group-item" data-toggle="collapse" data-target="#categoryManage"> 分类管理 </a>
+
+        <div class="collapse in" id="categoryManage">
+          <a href="categoryFirst.html" class="list-group-item ">一级分类</a>
+          <a href="categorySecond.html" class="list-group-item active ">二级分类</a>
+        </div>
+
+
+        <a href="#" class="list-group-item">商品管理</a>
+      </div>
+    </section>
+    <section class="right">
+      <div class="title">
+        <a href="#" class="fa fa-navicon"></a>
+        <a href="#" class="fa fa-sign-out">退出</a>
+      </div>
+      <div class="content">
+        <button type="button" class="btn btn-primary add-brand" data-toggle="modal" data-target="#addCategory">添加品牌</button>
+        <div id="addCategory" class="modal fade" tabindex="-1" role="dialog">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+                <h4 class="modal-title">添加品牌</h4>
+              </div>
+              <div class="modal-body">
+                <div class="input-group">
+                  <span class="input-group-addon">分类名称</span>
+                  <select id="category-name" class="form-control">
+                    <option value="1">运动馆</option>
+                  </select>
+                  <!-- <input type="text" class="form-control category-name"> -->
+                </div>
+                <div class="input-group">
+                  <span class="input-group-addon">品牌名称</span>
+                  <input type="text" class="form-control brand-name" placeholder="请输入品牌名称">
+                </div>
+                <div class="input-group">
+                  <span class="input-group-addon">品牌图片</span>
+                  <input type="file" class="form-control category-logo">
+                </div>
+                <div class="input-group">
+                  <img src="./images/1.png" alt="" class="logoPic">
+                </div>
+
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-primary btn-save" data-dismiss="modal">保存</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <table class="table table-bordered table-striped table-list">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>品牌编号</th>
+              <th>品牌名称</th>
+              <th>品牌logo</th>
+              <th>所属分类</th>
+            </tr>
+          </thead>
+          <tbody>
+
+          </tbody>
+        </table>
+        <!-- 分页部分 -->
+        <nav aria-label="Page navigation">
+          <ul class="pagination page-list">
+
+          </ul>
+        </nav>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- 创建一个获取分类的模板 -->
+  <script id="querySecondCategoryTpl" type="text/html">
+    {{each rows value i}}
+    <tr>
+        <th scope="row"><input type="checkbox" name="" id=""></th>
+        <td>{{value.id}}</td>
+        <td>{{value.brandName}}</td>
+        <td><img src="{{value.brandLogo}}" alt=""></td>
+        <td>{{value.categoryName}}</td>
+    </tr>
+    {{/each}}
+  
+  </script>
+
+  <!-- 创建一个分页按钮的模板 -->
+  <script id="pageTpl" type="text/html">
+    <!-- page就是当前页码数 上一页就是page-1 -->
+    <li data-page="{{page-1<1?1:(page-1)}}">
+      <a href="javascript:;">
+        <span>&laquo;</span>
+      </a>
+    </li>
+    <!-- 判断遍历的每一个页码数和当前点击的页码数是否一致 一致就添加高亮否则添加为空 -->
+    {{each pages value}}
+    <li data-page='{{value}}'  class="{{value==page?'active':''}}"><a href="javascript:;">{{value}}</a></li>
+    {{/each}}
+
+    <!--下一页就是page+1  -->
+    <li data-page="{{page+1>pages.length?(pages.length):(page+1)}}">
+      <a href="javascript:;" >
+        <span>&raquo;</span>
+      </a>
+    </li>
+  
+  </script>
+
+
+
+
+  <!-- 由于bootstrap依赖于jquery，所以要先引入jquery -->
+  <script src="./lib/jquery/jquery.min.js"></script>
+  <!-- 引入bootstrap的js -->
+  <script src="./lib/bootstrap/js/bootstrap.min.js"></script>
+  <!-- 引入模板引擎 -->
+  <script src="lib/artTemplate/template-web.js"></script>
+  <!-- 引入jquery+bootstrap的分页插件 -->
+  <script src="./lib/bootstrap/js/bootstrap-paginator.js"></script>
+  <!-- 引入登录的js -->
+  <script src="./js/categorySecond.js"></script>
+</body>
+
+</html>

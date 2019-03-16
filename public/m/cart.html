@@ -33,6 +33,10 @@
       <div class="mui-scroll">
         <ul class="mui-table-view">
           <li class="mui-table-view-cell">
+            <div class="mui-slider-right mui-disabled">
+              <a class="mui-btn mui-btn-red" style="transform: translate(0px, 0px);">编辑</a>
+              <a class="mui-btn mui-btn-red" style="transform: translate(0px, 0px);">删除</a>
+            </div>
             <a class="mui-navigate-right content">
               <div class="left">
                 <img src="./images/brand1.png" alt="">
@@ -53,7 +57,7 @@
   </main>
   <!-- 订单区域 -->
   <section id="order">
-    <span>订单总额：￥0.00</span>
+    <span>订单总额：￥<span class="price">0.00</span></span>
     <button type="button" class="mui-btn mui-btn-danger">生成订单</button>
   </section>
   <!-- 底部区域 -->
@@ -69,7 +73,7 @@
         <a href="#" class="active"><i class="fa fa-shopping-cart"></i><span>购物车</span></a>
       </div>
       <div class="mui-col-xs-3">
-        <a href="#"><i class="fa fa-user"></i><span>个人中心</span></a>
+        <a href="user.html"><i class="fa fa-user"></i><span>个人中心</span></a>
       </div>
 
     </div>
@@ -79,8 +83,12 @@
   <!-- 准备模板 -->
   <script id="cartTpl" type="text/html">
     {{each data value i}}
-    <li class="mui-table-view-cell">
-      <a class="mui-navigate-right content">
+    <li class="mui-table-view-cell mui-transitioning">
+        <div class="mui-slider-right mui-disabled">
+            <a class="mui-btn mui-btn-primary edit-btn" data-id='{{value.id}}' data-product='{{value}}' data-size='{{value.size}}'>编辑</a>
+            <a class="mui-btn mui-btn-red delete-btn" data-id='{{value.id}}'>删除</a>
+          </div>
+      <a class="mui-navigate-right content mui-slider-handle">
         <div class="left">
           {{each value.pic value i}}
           {{if i==0}}
@@ -88,7 +96,7 @@
           {{/if}}
           {{/each}}
           <div class="mui-checkbox">
-            <input name="checkbox" value="Item 2" type="checkbox" checked="">
+            <input name="checkbox" value="Item 2" type="checkbox" checked="" data-price="{{value.price}}" data-num="{{value.num}}">
           </div>
         </div>
         <div class="right">
@@ -99,8 +107,28 @@
       </a>
     </li>
     {{/each}}
-
   </script>
+  <script id="editProductTpl" type="text/html">
+    <ul class="mui-table-view">
+    <li class="mui-table-view-cell size">
+      尺码：<span class="sizeNum">
+        {{each productSize value i}}
+        <button type="button" class="mui-btn {{value==size?'mui-btn-warning':''}}" data-size='{{value}}'>{{value}}</button>
+        {{/each}}
+      </span>
+    </li>
+    <li class="mui-table-view-cell">
+      数量：
+      <div class="mui-numbox" data-numbox-min='1' data-numbox-max='{{productNum}}' data-num='{{productNum}}'>
+        <button class="mui-btn mui-btn-numbox-minus" type="button">-</button>
+        <input class="mui-input-numbox" type="number" value='{{num}}' />
+        <button class="mui-btn mui-btn-numbox-plus" type="button">+</button>
+      </div>
+      剩余：<span>{{productNum}}</span> 件
+    </ul>
+    </li>
+  </script>
+
   <!-- 引入mui的js文件 -->
   <script src="./lib/mui/js/mui.js"></script>
   <!-- 引入zepto 获取元素 发送请求 -->

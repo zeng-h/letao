@@ -1,0 +1,81 @@
+html,
+body {
+  height: 100%;
+}
+#main {
+  display: flex;
+  height: 100%;
+}
+#main .left {
+  width: 200px;
+  height: 100%;
+  background-color: skyblue;
+}
+#main .left .logo {
+  padding: 30px;
+  text-align: center;
+}
+#main .left .logo img {
+  width: 120px;
+  height: 120px;
+  border: 10px solid #fff;
+  border-radius: 50%;
+  box-shadow: 0px 0px 10px skyblue;
+  margin-bottom: 10px;
+}
+#main .left .list-group {
+  background-color: skyblue;
+}
+#main .left .list-group #categoryManage {
+  padding-left: 30px;
+}
+#main .left .list-group .list-group-item {
+  display: block;
+  background-color: skyblue;
+  border: 0;
+  margin-bottom: 0;
+}
+#main .left .list-group .list-group-item.active {
+  background-color: pink;
+}
+#main .left .list-group .list-group-item:hover {
+  background-color: pink;
+}
+#main .right {
+  flex: 1;
+}
+#main .right .title {
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+#main .right .title a {
+  font-size: 20px;
+}
+#main .right .title a:first-child {
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  background-color: yellowgreen;
+  color: #fff;
+  text-align: center;
+}
+#main .right .content {
+  padding: 20px;
+  background-color: #eee;
+}
+#main .right .content .input-group {
+  margin-bottom: 10px;
+}
+#main .right .content .table-list {
+  background-color: #fff;
+}
+#main .right .content .table-list thead th {
+  text-align: center;
+}
+#main .right .content .table-list tbody td,
+#main .right .content .table-list tbody th {
+  text-align: center;
+}

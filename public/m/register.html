@@ -11,7 +11,7 @@
   <!-- 引入fontwesome字体图标库的css文件 -->
   <link rel="stylesheet" href="./lib/fontAwesome/css/font-awesome.css">
   <!-- 引入自己的css文件 -->
-  <link rel="stylesheet" href="./less/login.css">
+  <link rel="stylesheet" href="./less/register.css">
 </head>
 
 <body>
@@ -21,7 +21,7 @@
       <a href="javascript:history.back();" class="fa fa-arrow-left"></a>
     </div>
     <div class="center">
-      <h4>登录中心</h4>
+      <h4>注册中心</h4>
     </div>
     <div class="right">
       <a class="fa fa-home" href="index.html"></a>
@@ -31,16 +31,28 @@
   <main id="main">
     <form class="mui-input-group">
       <div class="mui-input-row">
+        <label>手机号</label>
+        <input type="text" class="mui-input-clear mobile" placeholder="请输入手机号" value="1888899999">
+      </div>
+      <div class="mui-input-row">
         <label>用户名</label>
-        <input type="text" class="mui-input-clear username" placeholder="请输入用户名">
+        <input type="text" class="mui-input-clear username" placeholder="请输入用户名" value='itcast'>
       </div>
       <div class="mui-input-row">
         <label>密码</label>
-        <input type="password" class="mui-input-password password" placeholder="请输入密码">
+        <input type="password" class=" mui-input-clear mui-input-password password" placeholder="请输入密码" value="1">
       </div>
-      <div class="mui-button-row">
-        <button type="button" class="mui-btn mui-btn-primary btn-login">登录</button>
-        <a href="register.html" type="button" class="mui-btn mui-btn-danger register-btn">免费注册</a>
+      <div class="mui-input-row">
+        <label>确认密码</label>
+        <input type="password" class=" mui-input-clear mui-input-password confirmPassword" placeholder="请输入确认密码" value="1">
+      </div>
+      <div class="mui-input-row">
+        <label>验证码</label>
+        <input type="text" class="mui-input-clear vcode" placeholder="请输入验证码">
+        <button type="button" class="mui-btn mui-btn-primary get-vcode">获取验证码</button>
+      </div>
+      <div class="mui-input-row register">
+        <button type="button" class="mui-btn mui-btn-primary register-btn">注册</button>
       </div>
     </form>
   </main>
@@ -72,7 +84,7 @@
   <!-- 请求使用到模板，引入模板引擎 -->
   <script src="./lib/artTemplate/template-web.js"></script>
   <!-- 引入自己的js -->
-  <script src="./js/login.js"></script>
+  <script src="./js/register.js"></script>
 </body>
 
 </html>
